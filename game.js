@@ -10,13 +10,19 @@ function nextSequence(){
     var randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour);
 
-    $("#" + randomChosenColour).fadeOut(200, function() {
-        $("#" + randomChosenColour).fadeIn(200, function(){
+    // $("#" + randomChosenColour).fadeOut(200, function() {
+    //     $("#" + randomChosenColour).fadeIn(200, function(){
            
-        })
-    })    
+    //     })
+    // })    
+
     level += 1;
     $("h1").text("Level " + level);
+
+    setTimeout(function() { $("#" + randomChosenColour).fadeOut(200, function() {
+      $("#" + randomChosenColour).fadeIn(200, function(){ })
+    }) }, 200);
+
 }
 
 function playSound(name) {
